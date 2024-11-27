@@ -5,6 +5,17 @@
   home.username = "tim";
   home.homeDirectory = "/home/tim";
 
+  home.persistence."/persist/user/tim" = {
+    directories = [
+      "NixOSConfig"
+      "Downloads"
+      "Music"
+      "Pictures"
+      "Documents"
+      "Videos"
+    ];
+  };
+
   
   accounts.calendar.accounts."Personal" = {
     # name = "Radicale Personal";

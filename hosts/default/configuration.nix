@@ -27,11 +27,12 @@ in
 
   # Wipe / on every boot
   # TODO: Make sure that we keep potentially multiple backups instead of just one
-      #zfs destroy zroot/root@reboot
-
-      #zfs snapshot zroot/root@reboot
   # According to https://github.com/NixOS/nixpkgs/issues/341542#issuecomment-2351276397 this is where we should rollback
   boot.initrd.postResumeCommands = lib.mkAfter ''
+    zfs destroy zroot/root@reboot
+
+    zfs snapshot zroot/root@reboot
+
     zfs rollback -r zroot/root@blank
   '';
 
