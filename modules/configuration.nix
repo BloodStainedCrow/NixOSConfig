@@ -96,7 +96,7 @@
     isNormalUser = true;
     description = "Tim";
     extraGroups = [ "wheel"
-    "networkmanager" "docker" ];
+    "docker" ];
     # FIXME:
     password = "1234";
   };
