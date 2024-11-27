@@ -45,13 +45,16 @@
         type = "zpool";
         # This means NO redundancy! 
         mode = "single";
-        # Workaround: cannot import 'zroot': I/O error in disko tests
-        options.cachefile = "none";
+        
+        options = {
+          # Workaround: cannot import 'zroot': I/O error in disko tests
+          cachefile = "none";
+          ashift = "12";
+        };
 
         # See https://jrs-s.net/2018/08/17/zfs-tuning-cheat-sheet/
         rootFsOptions = {
           compression = "lz4";
-          ashift = 12;
           xattr = "sa";
           atime = "off";
           "com.sun:auto-snapshot" = "false";
@@ -74,15 +77,9 @@
             mountpoint = "/persist/system";
           };
           # TODO: Dataset per user
-          user = {
+          "user/tim" = {
             type = "zfs_fs";
-            mountpoint = "/persist/user";
-
-            datasets = {
-              tim = {
-                type = "zfs_fs";
-              };
-            };
+            mountpoint = "/persist/user/tim";
           };
         };
       };

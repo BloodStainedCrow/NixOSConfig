@@ -118,7 +118,8 @@
     };
 
     signing = {
-        signByDefault = true;
+        # TODO:
+        signByDefault = false;
         # TODO:
         key = null;
     };
@@ -182,7 +183,7 @@
     package = pkgs.vscodium;
 
     extensions = [
-
+      pkgs.vscode-extensions.jnoortheen.nix-ide
     ];
 
     keybindings = [

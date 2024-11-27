@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let 
   device = "/dev/nvme0";
 in
@@ -12,32 +12,36 @@ in
       ./hardware-configuration.nix
       ../../modules/configuration.nix
       # Swapsize based on ubuntu recommendation (https://itsfoss.com/swap-size/)
-      (import ./disko.nix { inherit device; swapsize = "38G"; })
+      (import ../../modules/disko.nix { inherit device; swapsize = "38G"; })
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = device;
-  #boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "TimsKleinerPC"; # Define your hostname.
+  networking.hostId = "310aa8dc";
+
+  home-manager.backupFileExtension = "backup";
 
 
   # Wipe / on every boot
   # TODO: Make sure that we keep potentially multiple backups instead of just one
-  boot.initrd.postDeviceCommand = lib.mkAfter ''
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
+    zfs destroy zroot/root@reboot
+
     zfs snapshot zroot/root@reboot
 
     zfs rollback -r zroot/root@blank
   '';
 
-  fileSystems."/persist".neededForBoot = true;
-  environment.persistance."/persist/system" = {
+  fileSystems."/persist/system".neededForBoot = true;
+  environment.persistence."/persist/system" = {
     hideMounts = true;
     directories = [
       "/etc/nixos"
       "/var/log"
-      "var/lib/bluetooth"
+      "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
     ];
