@@ -1,10 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  nixpkgs.overlays = [
-    (import nur)
-  ];
-
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
   ];
@@ -22,6 +18,7 @@
       "Documents"
       "Videos"
     ];
+    allowOther = true;
   };
 
   
@@ -121,10 +118,15 @@
 
   programs.firefox = {
     enable = true;
-    profiles.default.extensions = with pkgs.nur.repos.firefox-addons; [
-      # TODO:
-      inputs.firefox-addons."1password-x-password-manager"
-    ];
+    profiles.default = {
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        # TODO:
+        ublock-origin
+        istilldontcareaboutcookies
+
+        # dashlane
+      ];
+    };
   };
 
   programs.git = {

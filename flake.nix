@@ -27,8 +27,9 @@
       url = "github:nix-community/impermanence";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -42,7 +43,6 @@
           inputs.home-manager.nixosModules.default
           inputs.disko.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
-          inputs.nur.nixosModules
         ];
       };
 
