@@ -1,6 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (import nur)
+  ];
+
+  imports = [
+    inputs.impermanence.nixosModules.home-manager.impermanence
+  ];
+
   # TODO please change the username & home directory to your own
   home.username = "tim";
   home.homeDirectory = "/home/tim";
@@ -113,10 +121,10 @@
 
   programs.firefox = {
     enable = true;
-    # profiles.default.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-    #     # TODO:
-    #     privacy-badger
-    # ];
+    profiles.default.extensions = with pkgs.nur.repos.firefox-addons; [
+      # TODO:
+      inputs.firefox-addons."1password-x-password-manager"
+    ];
   };
 
   programs.git = {

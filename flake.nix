@@ -26,6 +26,10 @@
     impermanence = {
       url = "github:nix-community/impermanence";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -38,6 +42,7 @@
           inputs.home-manager.nixosModules.default
           inputs.disko.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
+          inputs.nur.nixosModules
         ];
       };
 
