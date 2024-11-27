@@ -27,11 +27,10 @@ in
 
   # Wipe / on every boot
   # TODO: Make sure that we keep potentially multiple backups instead of just one
+      #zfs destroy zroot/root@reboot
+
+      #zfs snapshot zroot/root@reboot
   boot.initrd.postDeviceCommands = lib.mkAfter ''
-    zfs destroy zroot/root@reboot
-
-    zfs snapshot zroot/root@reboot
-
     zfs rollback -r zroot/root@blank
   '';
 
