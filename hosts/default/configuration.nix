@@ -30,7 +30,8 @@ in
       #zfs destroy zroot/root@reboot
 
       #zfs snapshot zroot/root@reboot
-  boot.initrd.postDeviceCommands = lib.mkAfter ''
+  # According to https://github.com/NixOS/nixpkgs/issues/341542#issuecomment-2351276397 this is where we should rollback
+  boot.initrd.postResumeCommands = lib.mkAfter ''
     zfs rollback -r zroot/root@blank
   '';
 
