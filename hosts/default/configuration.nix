@@ -53,14 +53,10 @@ in
 
   programs.fuse.userAllowOther = true;
 
-  ## Configure keymap in X11
-  #services.xserver = {
-  #  layout = "de";
-  #  xkbVariant = "";
-  #};
-#
-  ## Configure console keymap
-  #console.keyMap = "de";
+  services.xserver.xkb.layout = "us";
+  # The trailing comma is important, see https://github.com/NixOS/nixpkgs/issues/359830
+  services.xserver.xkb.variant = "alt-intl,";
+  console.keyMap = "us";
 #
   ## NVIDIA settings
 #

@@ -5,6 +5,21 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
   ];
 
+  nixpkgs = {
+    overlays = [
+      inputs.nur.overlay
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
+
+  # Dark Mode!
+  dconf = {
+    enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
   # TODO please change the username & home directory to your own
   home.username = "tim";
   home.homeDirectory = "/home/tim";
@@ -17,6 +32,9 @@
       "Pictures"
       "Documents"
       "Videos"
+      "Games"
+      ".mozilla"
+      ".steam"
     ];
     allowOther = true;
   };
@@ -116,16 +134,21 @@
     };
   };
 
+  # TODO: For now I will persist Firefox settings
   programs.firefox = {
     enable = true;
     profiles.default = {
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         # TODO:
         ublock-origin
         istilldontcareaboutcookies
 
-        # dashlane
+        dashlane
       ];
+
+      settings = {
+
+      };
     };
   };
 
