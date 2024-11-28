@@ -3,7 +3,8 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, lib, ... }:
-let 
+let
+  # TODO: IIRC this is wrong
   device = "/dev/nvme0";
 in
 {
@@ -16,8 +17,12 @@ in
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+  };
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "TimsKleinerPC"; # Define your hostname.
   networking.hostId = "310aa8dc";

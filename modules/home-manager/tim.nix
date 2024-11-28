@@ -35,6 +35,8 @@
       "Games"
       ".mozilla"
       ".steam"
+      # TODO: Do I just want to persist this????
+      ".config"
     ];
     allowOther = true;
   };

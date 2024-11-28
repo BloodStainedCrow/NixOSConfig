@@ -1,13 +1,14 @@
 {
     device ? throw "Set this to your disk device, e.g. /dev/sda",
     swapsize ? throw "Set this to your preferred amount of swap",
+    ...
 }:
 {
   disko.devices = {
     disk = {
       mainSSD = {
         type = "disk";
-        device = "/dev/sdx";
+        device = device;
         content = {
           type = "gpt";
           partitions = {
@@ -44,6 +45,7 @@
       zroot = {
         type = "zpool";
         # This means NO redundancy! 
+        # TODO: This might be broken
         mode = "single";
         
         options = {
