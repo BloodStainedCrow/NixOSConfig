@@ -33,10 +33,12 @@
       "Documents"
       "Videos"
       "Games"
-      ".mozilla"
       ".steam"
-      # TODO: Do I just want to persist this????
-      ".config"
+
+      # Discord Stuff
+      ".config/discord"
+      ".config/Electron"
+      #".config/"
     ];
     allowOther = true;
   };
