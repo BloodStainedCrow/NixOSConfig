@@ -46,7 +46,7 @@
         type = "zpool";
         # This means NO redundancy! 
         # TODO: This might be broken
-        mode = "single";
+        # mode = "single";
         
         options = {
           # Workaround: cannot import 'zroot': I/O error in disko tests
