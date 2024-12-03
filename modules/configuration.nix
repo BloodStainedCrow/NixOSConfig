@@ -125,6 +125,7 @@
    git
    lshw
    pciutils
+   fd
   ];
 
   # enable swap to stop freezing on OOM

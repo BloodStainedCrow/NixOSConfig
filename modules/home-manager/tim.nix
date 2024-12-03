@@ -33,7 +33,12 @@
       "Documents"
       "Videos"
       "Games"
-      ".steam"
+      # FIXME: Steam failed with steamwebhelper not responding and made the folder unresponsive
+      # ".steam"
+
+      # Firefox
+      # TODO: The name of the profile is hardcoded!
+      ".mozilla/firefox/default/storage/default"
 
       # Discord Stuff
       ".config/discord"
@@ -135,6 +140,7 @@
 
     # set some aliases, feel free to add more or remove some
     shellAliases = {
+      listall = "sudo fd --one-file-system --base-directory / --type f --hidden --exclude '{tmp,etc/passwd}'";
     };
   };
 
