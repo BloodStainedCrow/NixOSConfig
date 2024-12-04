@@ -14,10 +14,32 @@
     };
   };
 
-  # Dark Mode!
   dconf = {
     enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    settings = {
+      # Set Weather location (TODO: Weather seems to bit a bit broken)
+      "org/gnome/Weather" = with lib.hm.gvariant; {
+        locations = [
+          (mkVariant (mkTuple [
+            (mkUint32 2)
+            (mkVariant (mkTuple [
+              "Aachen"
+              "ETNG"
+              true
+              [ (mkTuple [ 0.8895361479175408 0.10559241974565695 ]) ]
+              [ (mkTuple [ 0.8862006317307619 0.10617904236054476 ]) ]
+            ]))
+          ]))
+        ];
+      };
+
+      # Dark Mode!
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+
+      "org/gnome/desktop/interface".enable-hot-corners = false;
+
+      "org/gnome/mutter".edge-tiling = true;
+    };
   };
 
   # TODO please change the username & home directory to your own
