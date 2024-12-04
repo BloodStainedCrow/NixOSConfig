@@ -56,6 +56,8 @@
       "Videos"
       "Games"
 
+      ".ssh"
+
       # Steam
       # FIXME: Steam failed with steamwebhelper not responding and made the folder unresponsive
       # ".steam"
@@ -195,15 +197,22 @@
     userEmail = "tim.aschhoff@t-online.de";
 
     extraConfig = {
+      # Since the git config is read only, it is otherwise impossible to add a directory to be safe.
+      # I consider this fine, since if I clone a repo I expect to want to build/run it anyway
       safe.directory = "*";
+
+      # Sign all commits using ssh key
+      commit.gpgsign = true;
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
     };
 
-    signing = {
-        # TODO:
-        signByDefault = false;
-        # TODO:
-        key = null;
-    };
+    # signing = {
+    #     # TODO:
+    #     signByDefault = false;
+    #     # TODO:
+    #     key = null;
+    # };
   };
 
   # TODO: gpg-agent
@@ -212,13 +221,13 @@
     mutableKeys = false;
   };
 
-  xdg.configFile."private-key" = {
-    enable = true;
-    # TODO: replace with correct sopsnix stuff
-    # TODO: ENSURE this does not land in nix store!!!
-    source = config.lib.file.mkOutOfStoreSymlink "/run/secrets/private.key";
-    target = ".gnupg/private.key";
-  };
+  # xdg.configFile."private-key" = {
+  #   enable = true;
+  #   # TODO: replace with correct sopsnix stuff
+  #   # TODO: ENSURE this does not land in nix store!!!
+  #   source = config.lib.file.mkOutOfStoreSymlink "/run/secrets/private.key";
+  #   target = ".gnupg/private.key";
+  # };
 
   programs.spotify-player = {
     enable = true;
