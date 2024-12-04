@@ -55,17 +55,22 @@
       "Documents"
       "Videos"
       "Games"
+
+      # Steam
       # FIXME: Steam failed with steamwebhelper not responding and made the folder unresponsive
       # ".steam"
+      ".local/share/Steam"
 
       # Firefox
       # TODO: The name of the profile is hardcoded!
-      ".mozilla/firefox/default/storage/default"
+      ".mozilla/firefox/default"
 
-      # Discord Stuff
+      # VSCodium
+      ".config/VSCodium/User/globalStorage"
+
+      # Discord
       ".config/discord"
       ".config/Electron"
-      #".config/"
     ];
     allowOther = true;
   };
