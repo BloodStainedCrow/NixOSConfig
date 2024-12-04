@@ -59,7 +59,7 @@
       ".ssh"
 
       # Steam
-      # FIXME: Steam failed with steamwebhelper not responding and made the folder unresponsive
+      # FIXME: Steam failed with steamwebhelper not responding and made the folder unresponsive when using .steam
       # ".steam"
       ".local/share/Steam"
 
@@ -191,10 +191,15 @@
     };
   };
 
+  # # TODO: This is needed to locally verify the commit signing
+  # # TODO: This path is hardcoded relative to the home dir!
+  # home.file.".ssh/allowed_signers".text =
+  #   "* ${builtins.readFile /home/tim/.ssh/id_ed25519.pub}";
+
   programs.git = {
     enable = true;
     userName = "Tim Aschhoff";
-    userEmail = "tim.aschhoff@t-online.de";
+    userEmail = "tim@aschhoff.de";
 
     extraConfig = {
       # Since the git config is read only, it is otherwise impossible to add a directory to be safe.
@@ -205,14 +210,8 @@
       commit.gpgsign = true;
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/id_ed25519.pub";
+      # gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
     };
-
-    # signing = {
-    #     # TODO:
-    #     signByDefault = false;
-    #     # TODO:
-    #     key = null;
-    # };
   };
 
   # TODO: gpg-agent
