@@ -10,6 +10,8 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # SOPS-NIX CONFIG
 
   # TODO: Do I want the keyfile here or somewhere else
@@ -66,6 +68,34 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    pkgs.baobab      # disk usage analyzer
+    pkgs.cheese      # photo booth
+    pkgs.eog         # image viewer
+    pkgs.epiphany    # web browser
+    pkgs.simple-scan # document scanner
+    pkgs.totem       # video player
+    pkgs.yelp        # help viewer
+    pkgs.evince      # document viewer
+    pkgs.file-roller # archive manager
+    pkgs.geary       # email client
+    pkgs.seahorse    # password manager
+
+    # these should be self explanatory
+    pkgs.gnome-calendar 
+
+    pkgs.gnome-calculator 
+    pkgs.gnome-characters
+    pkgs.gnome-font-viewer 
+    pkgs.gnome-logs 
+    pkgs.gnome-maps
+    pkgs.gnome-clocks
+    pkgs.gnome-music
+    pkgs.gnome-disk-utility 
+    pkgs.pkgs.gnome-connections
+  ];
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
