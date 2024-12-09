@@ -27,8 +27,6 @@ in
   networking.hostName = "TimsKleinerPC"; # Define your hostname.
   networking.hostId = "310aa8dc";
 
-  home-manager.backupFileExtension = "backup";
-
 
   # Wipe / on every boot
   # TODO: Make sure that we keep potentially multiple backups instead of just one
@@ -55,8 +53,6 @@ in
       "/etc/machine-id"
     ];
   };
-
-  programs.fuse.userAllowOther = true;
 
   services.xserver.xkb.layout = "us";
   # The trailing comma is important, see https://github.com/NixOS/nixpkgs/issues/359830

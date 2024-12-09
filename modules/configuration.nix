@@ -44,6 +44,10 @@
   #   click-method='areas'
   # '';
 
+  home-manager.backupFileExtension = "backup";
+
+  programs.fuse.userAllowOther = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
