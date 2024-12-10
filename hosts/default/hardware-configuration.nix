@@ -13,71 +13,66 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "zroot/root";
-      fsType = "zfs";
-    };
+  # fileSystems."/" =
+  #   { device = "zroot/root";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/persist/system" =
-    { device = "zroot/system";
-      fsType = "zfs";
-    };
+  # fileSystems."/persist/system" =
+  #   { device = "zroot/system";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/nix" =
-    { device = "zroot/nix";
-      fsType = "zfs";
-    };
+  # fileSystems."/nix" =
+  #   { device = "zroot/nix";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/var/lib/nixos" =
-    { device = "/persist/system/var/lib/nixos";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+  # fileSystems."/var/lib/nixos" =
+  #   { device = "/persist/system/var/lib/nixos";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  #   };
 
-  fileSystems."/var/log" =
-    { device = "/persist/system/var/log";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+  # fileSystems."/var/log" =
+  #   { device = "/persist/system/var/log";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  #   };
 
-  fileSystems."/zroot" =
-    { device = "zroot";
-      fsType = "zfs";
-    };
+  # fileSystems."/persist/user/tim" =
+  #   { device = "zroot/user/tim";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/persist/user/tim" =
-    { device = "zroot/user/tim";
-      fsType = "zfs";
-    };
+  # fileSystems."/zroot/user" =
+  #   { device = "zroot/user";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/zroot/user" =
-    { device = "zroot/user";
-      fsType = "zfs";
-    };
+  # fileSystems."/etc/nixos" =
+  #   { device = "/persist/system/etc/nixos";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  #   };
 
-  fileSystems."/etc/nixos" =
-    { device = "/persist/system/etc/nixos";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+  # fileSystems."/var/lib/bluetooth" =
+  #   { device = "/persist/system/var/lib/bluetooth";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  #   };
 
-  fileSystems."/var/lib/bluetooth" =
-    { device = "/persist/system/var/lib/bluetooth";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+  # fileSystems."/var/lib/systemd/coredump" =
+  #   { device = "/persist/system/var/lib/systemd/coredump";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  #   };
 
-  fileSystems."/var/lib/systemd/coredump" =
-    { device = "/persist/system/var/lib/systemd/coredump";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/boot" = lib.mkDefault
-    { device = "/dev/disk/by-uuid/A25F-1539";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  # fileSystems."/boot" = lib.mkDefault
+  #   { device = "/dev/disk/by-uuid/A25F-1539";
+  #     fsType = "vfat";
+  #     options = [ "fmask=0022" "dmask=0022" ];
+  #   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
