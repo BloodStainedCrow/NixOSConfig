@@ -27,6 +27,9 @@ in
   networking.hostName = "TimsKleinerPC"; # Define your hostname.
   networking.hostId = "310aa8dc";
 
+  # TODO: Move this to the router
+  networking.networkmanager.insertNameservers = [ "192.168.0.227" ];
+
 
   # Wipe / on every boot
   # TODO: Make sure that we keep potentially multiple backups instead of just one
