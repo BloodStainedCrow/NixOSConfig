@@ -42,7 +42,6 @@
     };
   };
 
-  # TODO please change the username & home directory to your own
   home.username = "tim";
   home.homeDirectory = "/home/tim";
 
@@ -60,8 +59,9 @@
 
       # Steam
       # FIXME: Steam failed with steamwebhelper not responding and made the folder unresponsive when using .steam
-      # ".steam"
-      ".local/share/Steam"
+      # The cause seems that steam DOES NOT like running on fuse (i.e. the mount used bzy home manager impermanence)
+      # I fixed this by using symlink here
+      {directory = ".local/share/Steam"; method = "symlink";}
 
       # Firefox
       # TODO: The name of the profile is hardcoded!
@@ -112,46 +112,55 @@
     };
   };
 
-  accounts.email.accounts."main" = {
-    # TODO: I do not want this address in here I don't think
-    address = "tim@aschhoff.de";
-    # aliases = [
-    #     # TODO:
-    # ];
-    # gpg = {
-    #     # TODO:
-    #     key = "";
-    # };
-    imap = {
-        host = "imap.ionos.de ";
+  accounts.email = {
+    accounts."main" = {
+      address = "tim@aschhoff.de";
+      # aliases = [
+      #     # TODO:
+      # ];
+      # gpg = {
+      #     # TODO:
+      #     key = "";
+      # };
+      imap = {
+        host = "imap.ionos.de";
         port = 993;
-    };
-    
-    smtp = {
-      host = "smtp.ionos.de ";
-      port = 465;
-    };
-
-    # flavor = "plain";
-
-    userName = "tim@aschhoff.de";
-    # TODO: 
-    # passwordCommand = "cat /run/secrets/mail";
-    
-    realName = "Tim Aschhoff";
-
-    thunderbird = {
+        tls = {
         enable = true;
+          useStartTls = false;
+        };
+      };
+      
+      smtp = {
+        host = "smtp.ionos.de";
+        port = 465;
+        tls = {
+          enable = true;
+          useStartTls = true;
+        };
+      };
+
+      # flavor = "plain";
+
+      userName = "tim@aschhoff.de";
+      # TODO: 
+      # passwordCommand = "cat /run/secrets/mail";
+      
+      realName = "Tim Aschhoff";
+
+      thunderbird = {
+          enable = true;
+      };
+
+      primary = true;
+
+      # folders = {
+      #     drafts = "Entwürfe";
+      #     inbox = "Posteingang";
+      #     sent = "Gesendet";
+      #     trash = "Papierkorb";
+      # };
     };
-
-    primary = true;
-
-    # folders = {
-    #     drafts = "Entwürfe";
-    #     inbox = "Posteingang";
-    #     sent = "Gesendet";
-    #     trash = "Papierkorb";
-    # };
   };
 
   # Packages that should be installed to the user profile.
@@ -161,6 +170,7 @@
     spotify
     lutris
     wine
+    obsidian
   ];
 
   programs.bash = {
