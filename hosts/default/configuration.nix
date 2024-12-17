@@ -35,9 +35,11 @@ in
   # TODO: Make sure that we keep potentially multiple backups instead of just one
   # According to https://github.com/NixOS/nixpkgs/issues/341542#issuecomment-2351276397 we should use postResumeCommands
   boot.initrd.postResumeCommands = lib.mkAfter ''
-    zfs destroy zroot/root@reboot
+    zfs snapshot -r zroot/root@reboot
 
-    zfs snapshot zroot/root@reboot
+    zfs destroy zroot/backup
+
+    zfs send -R zroot/root@reboot | zfs recv zroot/backup -o mountpoint=/lastboot
 
     zfs rollback -r zroot/root@blank
   '';
