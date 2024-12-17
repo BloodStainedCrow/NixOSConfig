@@ -73,6 +73,9 @@
       # Discord
       ".config/discord"
       ".config/Electron"
+
+      # Factorio saves
+      ".factorio"
     ];
     allowOther = true;
   };
@@ -85,7 +88,6 @@
         userName = "tim";
         # TODO: This is likely wrong
         passwordCommand = "cat /run/secrets/radicale";
-        # TODO: Get full path
         url = "https://radicale.local.aschhoff.de/tim/f70942c4-8004-ca9d-9a19-976e51357d08/";
     };
   };
@@ -96,7 +98,6 @@
         userName = "tim";
         # TODO: This is likely wrong
         passwordCommand = "cat /run/secrets/radicale";
-        # TODO: Get full path
         url = "https://radicale.local.aschhoff.de/tim/0ecbe4c0-bbd0-1d7d-310e-75dcb5fbc16c/";
     };
   };
@@ -107,13 +108,12 @@
         userName = "tim";
         # TODO: This is likely wrong
         passwordCommand = "cat /run/secrets/radicale";
-        # TODO: Get full path
-        url = "radicale.local.aschhoff.de";
+        url = "https://radicale.local.aschhoff.de/tim/8c529332-66c7-476d-23d8-dae20e952694/";
     };
   };
 
   accounts.email = {
-    accounts."main" = {
+    accounts."tim@aschhoff.de" = {
       address = "tim@aschhoff.de";
       # aliases = [
       #     # TODO:
@@ -140,8 +140,6 @@
         };
       };
 
-      # flavor = "plain";
-
       userName = "tim@aschhoff.de";
       # TODO: 
       # passwordCommand = "cat /run/secrets/mail";
@@ -153,13 +151,6 @@
       };
 
       primary = true;
-
-      # folders = {
-      #     drafts = "Entwürfe";
-      #     inbox = "Posteingang";
-      #     sent = "Gesendet";
-      #     trash = "Papierkorb";
-      # };
     };
   };
 
@@ -188,7 +179,6 @@
     enable = true;
     profiles.default = {
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        # TODO:
         ublock-origin
         istilldontcareaboutcookies
 
@@ -196,7 +186,9 @@
       ];
 
       settings = {
-
+        "signon.rememberSignons" = false;
+        # TODO:
+        # "browser.translations.neverTranslateLanguages" = "[]";
       };
     };
   };
