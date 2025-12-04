@@ -200,6 +200,7 @@
 
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userName = "Tim Aschhoff";
     userEmail = "tim@aschhoff.de";
 
