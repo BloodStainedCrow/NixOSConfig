@@ -22,9 +22,10 @@ in
         obs
       ];
 
-      home-manager.users."${username}" = {
+      home-manager.users."${username}" = with inputs.self.modules.homeManager; {
         imports = [
           inputs.self.modules.homeManager."${username}"
+          minecraft
         ];
       };
 
