@@ -25,7 +25,6 @@ in
       home-manager.users."${username}" = with inputs.self.modules.homeManager; {
         imports = [
           inputs.self.modules.homeManager."${username}"
-          minecraft
         ];
       };
 

@@ -29,6 +29,9 @@
         system-minimal
         secrets
       ]
-      ++ [ inputs.self.modules.generic.systemConstants ];
+      ++ (with inputs.self.modules.generic; [
+        systemConstants
+        pkgs-by-name
+      ]);
   };
 }
