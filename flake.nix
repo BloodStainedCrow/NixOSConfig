@@ -15,7 +15,11 @@
     };
     factory_game_dev = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:BloodStainedCrow/FactoryGame/dev";
+      url = "git+https://github.com/BloodStainedCrow/FactoryGame.git?ref=dev&lfs=1";
+    };
+    factory_game_main = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://github.com/BloodStainedCrow/FactoryGame.git?ref=master&lfs=1";
     };
     firefox-addons = {
       inputs.nixpkgs.follows = "nixpkgs";
