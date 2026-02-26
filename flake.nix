@@ -29,12 +29,26 @@
     };
     impermanence.url = "github:Musholic/impermanence/home_suffix_fix";
     import-tree.url = "github:vic/import-tree";
+    intel-oneapi-vtune = {
+      flake = false;
+      url = "path:./packages-custom/intel-oneapi-vtune/package.nix";
+    };
+    intel-vtune-sepdk = {
+      flake = false;
+      url = "path:./kernelModules/intel-vtune-sepdk";
+    };
     nix-index = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nix-index";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    old-nixpkgs.url = "github:nixos/nixpkgs/23.05";
+    packages = {
+      flake = false;
+      url = "path:./packages";
+    };
+    pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
   };
 
 }

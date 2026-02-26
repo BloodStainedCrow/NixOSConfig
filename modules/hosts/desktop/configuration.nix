@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.modules.nixos.TimsKleinerPC = {
+  flake.modules.nixos.TimsKleinerPC = {pkgs, ...}: {
     imports = with inputs.self.modules.nixos; [
       system-desktop
       grub
@@ -15,6 +15,8 @@
       impermanence
 
       factory_game_dedicated_server
+
+      vtune
     ];
 
 
@@ -51,5 +53,8 @@
     systemd.targets.suspend.enable = false;
     systemd.targets.hibernate.enable = false;
     systemd.targets.hybrid-sleep.enable = false;
+    
+    # TODO:
+    nixpkgs.config.allowUnfree = true;
   };
 }

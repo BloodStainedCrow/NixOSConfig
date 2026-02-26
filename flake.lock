@@ -272,6 +272,30 @@
         "type": "github"
       }
     },
+    "intel-oneapi-vtune": {
+      "flake": false,
+      "locked": {
+        "path": "./packages-custom/intel-oneapi-vtune/package.nix",
+        "type": "path"
+      },
+      "original": {
+        "path": "./packages-custom/intel-oneapi-vtune/package.nix",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "intel-vtune-sepdk": {
+      "flake": false,
+      "locked": {
+        "path": "./kernelModules/intel-vtune-sepdk",
+        "type": "path"
+      },
+      "original": {
+        "path": "./kernelModules/intel-vtune-sepdk",
+        "type": "path"
+      },
+      "parent": []
+    },
     "nix-index": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -356,6 +380,49 @@
         "type": "github"
       }
     },
+    "old-nixpkgs": {
+      "locked": {
+        "lastModified": 1685566663,
+        "narHash": "sha256-btHN1czJ6rzteeCuE/PNrdssqYD2nIA4w48miQAFloM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4ecab3273592f27479a583fb6d975d4aba3486fe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "23.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "packages": {
+      "flake": false,
+      "locked": {
+        "path": "./packages",
+        "type": "path"
+      },
+      "original": {
+        "path": "./packages",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "pkgs-by-name-for-flake-parts": {
+      "locked": {
+        "lastModified": 1769286518,
+        "narHash": "sha256-F7VlUICvYp2wJKyQqM6d46BNEZCzMQ6dMH9zbmjuybc=",
+        "owner": "drupol",
+        "repo": "pkgs-by-name-for-flake-parts",
+        "rev": "7ba1cd4a9a72c9c6c272018a63f090f2c912a171",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drupol",
+        "repo": "pkgs-by-name-for-flake-parts",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -367,9 +434,14 @@
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "import-tree": "import-tree",
+        "intel-oneapi-vtune": "intel-oneapi-vtune",
+        "intel-vtune-sepdk": "intel-vtune-sepdk",
         "nix-index": "nix-index",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "old-nixpkgs": "old-nixpkgs",
+        "packages": "packages",
+        "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts"
       }
     },
     "rust-analyzer-src": {
