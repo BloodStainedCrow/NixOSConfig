@@ -38,7 +38,7 @@ stdenv.mkDerivation rec {
     mkdir -p $out/share/java $out/bin
     cp ${src} $out/share/java/${pname}-${version}.jar
 
-    makeWrapper ${openjdk}/bin/java $out/bin/ninjabrain-bot --prefix LD_LIBRARY_PATH ":" ${lib.makeLibraryPath linkedLibraries} --add-flags "-jar $out/share/java/${pname}-${version}.jar"
+    makeWrapper ${openjdk}/bin/java $out/bin/ninjabrain-bot --prefix LD_LIBRARY_PATH ":" ${lib.makeLibraryPath linkedLibraries} --add-flags "-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar $out/share/java/${pname}-${version}.jar"
   '';
 
 

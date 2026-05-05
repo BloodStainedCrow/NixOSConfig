@@ -16,9 +16,18 @@
 
       factory_game_dedicated_server
 
-      vtune
+      # vtune
     ];
 
+    # FIXME: This is for factorio UPS
+    boot.kernelParams = [
+      "hugepagesz=1G"
+      "hugepages=4"
+    ];
+
+    boot.extraModprobeConfig = ''
+      options nvidia NVreg_RestrictProfilingToAdminUsers=0
+    '';
 
     networking.hostName = "TimsKleinerPC";
     networking.hostId = "310aa8dc";

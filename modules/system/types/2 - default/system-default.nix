@@ -22,7 +22,7 @@
   # impermanence is not added by default to home-manager, because of missing Darwin implementation
   # for linux home-manager stand-alone configurations it has to be added manualy
 
-  flake.modules.homeManager.system-default = {
+  flake.modules.homeManager.system-default = {pkgs, ...}: {
     imports =
       with inputs.self.modules.homeManager;
       [
@@ -33,5 +33,14 @@
         systemConstants
         pkgs-by-name
       ]);
+
+      nixpkgs.overlays = [
+        (final: _prev: {
+          unstable = import inputs.nixpkgs-unstable {
+            inherit (final) config;
+            system = pkgs.stdenv.hostPlatform.system;
+          };
+        })
+      ];
   };
 }
