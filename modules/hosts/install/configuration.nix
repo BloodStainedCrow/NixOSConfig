@@ -7,7 +7,8 @@
     imports = with inputs.self.modules.nixos; [
       system-minimal
       disko
-      grub
+      # FIXME: This only works for bios machines
+      grub-bios
     ];
 
     # FIXME: This should not be in here. Prob this entire thing should be a flake option thingy

@@ -6,7 +6,7 @@
   flake.modules.nixos.TimsLaptop = {
     imports = with inputs.self.modules.nixos; [
       system-desktop
-      grub
+      grub-bios
       bluetooth
       disko
 
