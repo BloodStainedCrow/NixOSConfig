@@ -4,20 +4,12 @@
   ...
 }:
 {
-  flake.modules.nixos.TimsLaptop =
+  flake.modules.nixos.install =
     { config, ... }:
     {
       imports =
         with inputs.self.modules.nixos;
         [
         ];
-
-      
-
-      # Add user secrets 
-
-      home-manager.users.tim = {
-        # User settings only for this host
-      };
     };
 }
