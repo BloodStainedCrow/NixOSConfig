@@ -13,18 +13,19 @@ let
       # boot.zfs.package = config.boot.kernelPackages.${pkgs.zfs.kernelModuleAttribute};
       boot.zfs.package = pkgs.zfs_2_4;
 
+      grub.device = config.disko.device;
 
       disko.devices = {
         disk = {
           mainSSD = {
             type = "disk";
-            device = options.disko.device;
+            device = config.disko.device;
             content = {
               type = "gpt";
               partitions = {
                 ESP = {
                   name = "ESP";
-                  size = "500M";
+                  size = "2G";
                   type = "EF00";
                   content = {
                     type = "filesystem";
@@ -33,8 +34,14 @@ let
                     # mountOptions = [ "umask=0077" ];
                   };
                 };
+                biosBoot = {
+                  # Taken from https://github.com/nix-community/disko/blob/6e8dc7aa0e65fce67c76e18227a13a7d529f2cdf/example/gpt-bios-compat.nix
+                  size = "1M";
+                  type = "EF02"; # for grub MBR
+                  attributes = [ 0 ]; # partition attribute
+                };
                 swap = {
-                  size = options.disko.swapsize;
+                  size = config.disko.swapsize;
                   content = {
                     type = "swap";
                     resumeDevice = true;
@@ -109,10 +116,10 @@ in
 
     options = {
       disko.device = lib.mkOption {
-        type = lib.types.attrsOf lib.types.externalPath;
+        type = lib.types.str;
       };
       disko.swapsize = lib.mkOption {
-        type = lib.types.attrsOf lib.types.str;
+        type = lib.types.str;
       };
     };
   };

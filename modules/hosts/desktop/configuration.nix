@@ -9,6 +9,11 @@
       grub
       bluetooth
       disko
+      {
+        # TODO: Grub does not want this for UEFI I believe
+        disko.device = "/dev/nvme0n1";
+        disko.swapsize = "64G";
+      }
 
       nvidia-graphics
 

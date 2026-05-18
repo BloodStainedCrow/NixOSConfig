@@ -32,6 +32,7 @@ in
           ansifilter
         ];
 
+        # FIXME: When creating these folders they are created owned by root. This breaks rebuilds from scratch.
         persistence = inputs.self.lib.addPersistedFolders config [
           "NixOSConfig"
           "Downloads"

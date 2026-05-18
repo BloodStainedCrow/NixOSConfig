@@ -8,6 +8,6 @@ I have all my machines using zfs.
 
 Secrets are managed using [sops-nix](https://github.com/Mic92/sops-nix).
 
-Installing is done via `sudo nix run "github:nix-community/disko/latest#disko-install" --extra-experimental-features flakes --extra-experimental-features nix-command -- --flake .#{host} --disk {diskName} {diskIdent}`
+Installing is done most easily using [nixos-anywhere](https://github.com/nix-community/nixos-anywhere/blob/92f82c5196a5f8588be4967e535c4cfd35e85902/docs/howtos/no-os.md#installing-on-a-machine-with-no-operating-system).
 
-where `diskName` is most likely `mainSSD` and `diskIdent` is most likely `/dev/sda` or similar.
+Just run `nix run github:nix-community/nixos-anywhere -- --flake '.#TimsLaptop' --target-host nixos@192.168.0.218` after setting a password in the installer.

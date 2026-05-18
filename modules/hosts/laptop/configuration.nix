@@ -6,13 +6,20 @@
   flake.modules.nixos.TimsLaptop = {
     imports = with inputs.self.modules.nixos; [
       system-desktop
-      grub-bios
+      grub
       bluetooth
       disko
+
+      {
+        disko.device = "/dev/sda";
+        disko.swapsize = "64G";
+      }
 
       nvidia-graphics
 
       impermanence
+
+      wifi
     ];
 
 
