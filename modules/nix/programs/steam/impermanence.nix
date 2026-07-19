@@ -11,7 +11,7 @@
     }:
     {
       home.persistence = inputs.self.lib.addPersistedFolders config [
-        ".local/share/steam"
+        ".local/share/Steam"
       ];
     };
 }
