@@ -13,7 +13,7 @@ let
       # boot.zfs.package = config.boot.kernelPackages.${pkgs.zfs.kernelModuleAttribute};
       boot.zfs.package = pkgs.zfs_2_4;
 
-      grub.device = config.disko.device;
+      # grub.device = config.disko.device;
 
       disko.devices = {
         disk = {
@@ -34,7 +34,7 @@ let
                     # mountOptions = [ "umask=0077" ];
                   };
                 };
-                biosBoot = {
+                biosBoot = lib.mkIf config.disko.useBios {
                   # Taken from https://github.com/nix-community/disko/blob/6e8dc7aa0e65fce67c76e18227a13a7d529f2cdf/example/gpt-bios-compat.nix
                   size = "1M";
                   type = "EF02"; # for grub MBR
@@ -120,6 +120,10 @@ in
       };
       disko.swapsize = lib.mkOption {
         type = lib.types.str;
+      };
+      disko.useBios = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
       };
     };
   };

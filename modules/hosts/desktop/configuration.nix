@@ -7,7 +7,12 @@
     imports = with inputs.self.modules.nixos; [
       system-desktop
       grub
+      {
+        # Grub does not want this for UEFI I believe
+        grub.device = "nodev";
+      }
       bluetooth
+      wifi
       disko
       {
         # TODO: Grub does not want this for UEFI I believe

@@ -17,7 +17,8 @@
             # https://github.com/nix-community/disko/blob/master/docs/quickstart.md
             # But without it nixos fails to build???
 
-            device = config.grub.device;
+            # device = config.grub.device;
+            device = "nodev";
           };
         };
       })

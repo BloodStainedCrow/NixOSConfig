@@ -33,7 +33,7 @@ in
         description = "Tim";
         initialPassword = "changeme";
         extraGroups = [
-          "wheel" "vtune"
+          "wheel" "vtune" "networkmanager"
         ];
       };
     };
