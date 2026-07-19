@@ -26,7 +26,7 @@
 
       factory_game_dedicated_server
 
-      # vtune
+      vtune
     ];
 
     # FIXME: This is for factorio UPS

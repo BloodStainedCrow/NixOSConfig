@@ -58,6 +58,8 @@ stdenv.mkDerivation {
   unpackPhase = ''
     runHook preUnpack
     7za x $src _installdir/vtune/${versionMajorMinor}/sepdk
+
+
     cd _installdir/vtune/${versionMajorMinor}/sepdk/src
     runHook postUnpack
   '';

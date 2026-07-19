@@ -39,11 +39,11 @@ stdenv.mkDerivation (
   in
   {
     pname = "intel-oneapi-vtune";
-    version = "2025.9.0";
+    version = "2026.1.0";
 
     src = fetchurl {
-      url = "https://installer.repos.intel.com/oneapi/vtune/lin/intel.oneapi.lin.vtune,v=2025.9.0%2B10/cupPayload.cup";
-      sha256 = "sha256-G6+do6mXse3BS8k61Sx9tn61HmZcrS1zRQAfgJQdBoc=";
+      url = "https://installer.repos.intel.com/oneapi/vtune/lin/intel.oneapi.lin.vtune,v=2026.1.0%2B13/cupPayload.cup";
+      sha256 = "sha256-XFW6bKomTQlwspHL1uE0Mbr8d5xw4UIrsTMOHsWbZqg=";
     };
 
     nativeBuildInputs = [
@@ -124,7 +124,8 @@ stdenv.mkDerivation (
       "libffi.so.6" # Used in vendored python
       "libgdbm.so.4" # Used in vendored python
       "libgdbm_compat.so.4" # Used in vendored python
-      "libsycl.so.8" # Used in bin64/self_check_apps/matrix.dpcpp/matrix.dpcpp
+      "liboutputgenerator.so" # Used in gma/GTPin/Profilers/Examples/intel64/memorytrace.so
+      "libsycl.so.9" # Used in bin64/self_check_apps/matrix.dpcpp/matrix.dpcpp
 
       "libopencl-clang.so.14"
     ];
