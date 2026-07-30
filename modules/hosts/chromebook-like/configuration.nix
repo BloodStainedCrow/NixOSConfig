@@ -15,6 +15,7 @@
       wifi
 
       disko
+      ssh
     ];
     users.mutableUsers = false;
 
