@@ -22,6 +22,9 @@
         ];
       };
 
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3jBccnyu9qNn8B9iDTUSCIedKUA5J/HJDOhoUMMRgM"
+      ];
       
 
       # Add user secrets 

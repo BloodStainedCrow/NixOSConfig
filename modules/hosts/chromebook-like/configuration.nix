@@ -13,11 +13,11 @@
       nvidia-graphics
 
       wifi
+
+      disko
     ];
     users.mutableUsers = false;
 
-
-    networking.hostName = "SimpleNixosPC";
 
     services.xserver.xkb.layout = "de";
     console.keyMap = "de";
