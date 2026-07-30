@@ -8,6 +8,7 @@
     imports = [
       ({config, ...}: {
         boot.loader = {
+          timeout = lib.mkIf config.grub.hide 0;
           grub = {
             enable = true;
             efiSupport = true;
@@ -27,6 +28,11 @@
     options = {
       grub.device = lib.mkOption {
         type = lib.types.str;
+      };
+
+      grub.hide = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
       };
     };
   };

@@ -9,6 +9,4 @@
       };
     };
   };
-
-  # TODO: Add easy way to add public key
 }

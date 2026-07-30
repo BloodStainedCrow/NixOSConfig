@@ -6,7 +6,7 @@
   flake.modules.nixos.TimsKleinerPC = {pkgs, ...}: {
     imports = with inputs.self.modules.nixos; [
       system-desktop
-      grub
+      grub 
       {
         # Grub does not want this for UEFI I believe
         grub.device = "nodev";
@@ -15,7 +15,6 @@
       wifi
       disko
       {
-        # TODO: Grub does not want this for UEFI I believe
         disko.device = "/dev/nvme0n1";
         disko.swapsize = "64G";
       }
@@ -30,11 +29,12 @@
     ];
 
     # FIXME: This is for factorio UPS
-    boot.kernelParams = [
-      "hugepagesz=1G"
-      "hugepages=4"
-    ];
+    # boot.kernelParams = [
+    #   "hugepagesz=1G"
+    #   "hugepages=4"
+    # ];
 
+    # For GPU profiling 
     boot.extraModprobeConfig = ''
       options nvidia NVreg_RestrictProfilingToAdminUsers=0
     '';

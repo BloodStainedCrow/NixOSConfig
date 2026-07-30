@@ -16,6 +16,10 @@
       # TODO: For now I will persist Firefox settings
       programs.firefox = {
         enable = true;
+
+        # Keep legacy behaviour from 25.11
+        configPath = ".mozilla/firefox";
+
         profiles.default = {
           extensions.packages = with pkgs.firefox-addons; [
             ublock-origin

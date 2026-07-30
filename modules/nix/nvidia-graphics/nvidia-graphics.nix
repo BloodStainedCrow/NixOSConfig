@@ -27,10 +27,6 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
-
-    # TODO: For now i will use x11 (disabling wayland) since nvidia does not properly support wayland :/
-    services.displayManager.gdm.wayland = true;
-
     # Enable OpenGL
     hardware.graphics = {
       enable = true;

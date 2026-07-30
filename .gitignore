@@ -2,3 +2,4 @@ result
 .Trash-*
 OLD
 nixosconfig
+*.qcow2

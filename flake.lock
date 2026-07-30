@@ -52,11 +52,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777713215,
-        "narHash": "sha256-8GzXDOXckDWwST8TY5DbwYFjdvQLlP7K9CLSVx6iTTo=",
+        "lastModified": 1781152676,
+        "narHash": "sha256-RxWs5ND31KzTG7wvMM+PMfUjyNpmIEr999lqNARaM5o=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "63b4e7e6cf75307c1d26ac3762b886b5b0247267",
+        "rev": "ff8702b4de27f72b4c78573dfb89ec74e36abdf1",
         "type": "github"
       },
       "original": {
@@ -75,12 +75,12 @@
         "nixpkgs-codium": "nixpkgs-codium"
       },
       "locked": {
-        "lastModified": 1774000672,
+        "lastModified": 1781537018,
         "lfs": true,
-        "narHash": "sha256-kYSmv5uMM63WLEc3Y35yW6CpyWu2dyV1qmHFCZNakn0=",
+        "narHash": "sha256-QBavjDcYsnfDT0FvUVICmiOYKZRhRWWj38RdU3NiEfI=",
         "ref": "dev",
-        "rev": "663662791dbdff49f7ab4b7ef39c30de9d4cb7c6",
-        "revCount": 462,
+        "rev": "73293812277a31887d3b6d5742b2962e922a3c72",
+        "revCount": 477,
         "type": "git",
         "url": "https://github.com/BloodStainedCrow/FactoryGame.git"
       },
@@ -101,12 +101,12 @@
         "nixpkgs-codium": "nixpkgs-codium_2"
       },
       "locked": {
-        "lastModified": 1774000672,
+        "lastModified": 1781537018,
         "lfs": true,
-        "narHash": "sha256-kYSmv5uMM63WLEc3Y35yW6CpyWu2dyV1qmHFCZNakn0=",
+        "narHash": "sha256-QBavjDcYsnfDT0FvUVICmiOYKZRhRWWj38RdU3NiEfI=",
         "ref": "dev",
-        "rev": "663662791dbdff49f7ab4b7ef39c30de9d4cb7c6",
-        "revCount": 462,
+        "rev": "73293812277a31887d3b6d5742b2962e922a3c72",
+        "revCount": 477,
         "type": "git",
         "url": "https://github.com/BloodStainedCrow/FactoryGame.git"
       },
@@ -127,12 +127,12 @@
         "nixpkgs-codium": "nixpkgs-codium_3"
       },
       "locked": {
-        "lastModified": 1771523185,
+        "lastModified": 1779089322,
         "lfs": true,
-        "narHash": "sha256-2Z42B+0IgrugH15YeLn64gc53v598ogSNsDBxhh8WwU=",
+        "narHash": "sha256-0SetfUmDNjopUhqq91uQswEmvPh18G6h0yQqL+jhZ1w=",
         "ref": "master",
-        "rev": "0ffa7000cd403156dc2236296d29d738fc10d8e4",
-        "revCount": 304,
+        "rev": "40d3a19c8a70161381019e1527b6e8c869c04386",
+        "revCount": 305,
         "type": "git",
         "url": "https://github.com/BloodStainedCrow/FactoryGame.git"
       },
@@ -217,11 +217,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777945852,
-        "narHash": "sha256-bMtCgc61VX0KoEfmYHs8AjKc3Y/l2AsxZCAlY6dqNnE=",
+        "lastModified": 1784337768,
+        "narHash": "sha256-Mca2Za8qqFEzzDl98abogX3QqXADCz9BBZ2DdHrBufo=",
         "owner": "petrkozorezov",
         "repo": "firefox-addons-nix",
-        "rev": "ba8630a34d893f6c5c696bd0234daebcea22f649",
+        "rev": "c9c98fd2ab5e8725ee6691ee6b4b58e9b1230b1a",
         "type": "github"
       },
       "original": {
@@ -248,11 +248,11 @@
     },
     "flake-file": {
       "locked": {
-        "lastModified": 1777679829,
-        "narHash": "sha256-zQxY90pq7BDbeimAiOfuK2U0huzo6oHOiC8zEpRgsbQ=",
+        "lastModified": 1784255282,
+        "narHash": "sha256-srM+PTqxfyvbQ0BevsOtP8vQv/Ox6OMtY4DktoDxLKg=",
         "owner": "vic",
         "repo": "flake-file",
-        "rev": "04ca28cf570276e70a9a5f694791ab2a60f1f300",
+        "rev": "66ddd2f69a5c4677f0095c6f70eea1217dc45749",
         "type": "github"
       },
       "original": {
@@ -266,11 +266,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1777988971,
-        "narHash": "sha256-qIoWPDs+0/8JecyYgE3gpKQxW/4bLW/gp45vow9ioCQ=",
+        "lastModified": 1782949081,
+        "narHash": "sha256-vp6Y/Grm98ESt6ceOkWiHWyZRDV3J1RID4w+6NWK9yA=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "0678d8986be1661af6bb555f3489f2fdfc31f6ff",
+        "rev": "17c9d6cdfc60c64f4ee8d306f9bc0b4ccb51481e",
         "type": "github"
       },
       "original": {
@@ -303,16 +303,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1777851538,
-        "narHash": "sha256-Gp8qwTEYNoy2yvmErVGlvLOQvrtEECCAKbonW7VJef8=",
+        "lastModified": 1784350909,
+        "narHash": "sha256-ZWyzLbS1yKUTeFJLmdVuWNnHttL333/ldJbEE+KzCrM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cc09c0f9b7eaa95c2d9827338a5eb03d32505ca5",
+        "rev": "4ce190229c73d44536caa7072f6308fb2d8feeb3",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-25.11",
+        "ref": "release-26.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -360,11 +360,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1773693634,
-        "narHash": "sha256-BtZ2dtkBdSUnFPPFc+n0kcMbgaTxzFNPv2iaO326Ffg=",
+        "lastModified": 1784254960,
+        "narHash": "sha256-iI88R3wHz8wTKQb5orvpc51L/Xr64AJyxid/0MKa/b8=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "c41e7d58045f9057880b0d85e1152d6a4430dbf1",
+        "rev": "4ebb10ae17d5f1ad366e7aef5b92cb8eecf24f69",
         "type": "github"
       },
       "original": {
@@ -405,11 +405,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777390267,
-        "narHash": "sha256-3tnrsI3Z51WUCs/wte3mdzo10vsmcVruQKNCFq04LTo=",
+        "lastModified": 1783288624,
+        "narHash": "sha256-wZh4vbBeNV3dyTax+uTN958LHfwKVcZzmbVTS3UrAgc=",
         "owner": "nix-community",
         "repo": "nix-index",
-        "rev": "db3e2fea2e2c34b35adccc772850e01685e94458",
+        "rev": "612a15648030d33ebc4d1b3f6bb84cb666ec986e",
         "type": "github"
       },
       "original": {
@@ -484,11 +484,11 @@
     },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1777168982,
-        "narHash": "sha256-GOkGPcboWE9BmGCRMLX3worL4EMnsnG8MyKmXNeYuhQ=",
+        "lastModified": 1782614948,
+        "narHash": "sha256-ePjCwr1sNm9NYUqywL7QfK3JnlS015msC+eBu2zKlp8=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "f5901329dade4a6ea039af1433fb087bd9c1fe14",
+        "rev": "db3f255737b94216eb71cce308e2912cf6bc2d7c",
         "type": "github"
       },
       "original": {
@@ -499,11 +499,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1777954456,
-        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
+        "lastModified": 1784356753,
+        "narHash": "sha256-12KrbMiWLcf8m7pCvAtZh1ZrgF85ZXDXvfR/fWTKy84=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
+        "rev": "61b7c44c4073f0b827768aff0049561b5110ea5a",
         "type": "github"
       },
       "original": {
@@ -515,16 +515,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1777673416,
-        "narHash": "sha256-5c2POKPOjU40Kh0MirOdScBLG0bu9TAuPYAtPRNZMBs=",
+        "lastModified": 1784280462,
+        "narHash": "sha256-DtoqIqM7VkR6NxAkcLpMwmi02USwWb3JdmNGLyhthc0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "26ef669cffa904b6f6832ab57b77892a37c1a671",
+        "rev": "293d6abedf0478e681a4dfcfcb35b30fc796a32f",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-25.11",
+        "ref": "nixos-26.05",
         "repo": "nixpkgs",
         "type": "github"
       }

@@ -22,9 +22,9 @@
       };
     };
 
-    mkHomeManager = system: name: {
+    mkHomeManager = stdenv: name: {
       ${name} = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs.legacyPackages.${system};
+        pkgs = inputs.nixpkgs.legacyPackages.${stdenv.hostPlatform.system};
         modules = [
           inputs.self.modules.homeManager.${name}
           { nixpkgs.config.allowUnfree = true; }

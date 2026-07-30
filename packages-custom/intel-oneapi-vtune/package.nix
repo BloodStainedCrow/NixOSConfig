@@ -28,8 +28,14 @@
   stdenv,
   systemd,
   wrapGAppsHook3,
-  xorg,
   readline,
+  libx11,
+  libxcomposite,
+  libxdamage,
+  libxext,
+  libxfixes,
+  libxrandr,
+  libxcb,
 }:
 
 stdenv.mkDerivation (
@@ -75,13 +81,13 @@ stdenv.mkDerivation (
       opencl-clang
       pango
       stdenv.cc.cc.lib
-      xorg.libX11
-      xorg.libXcomposite
-      xorg.libXdamage
-      xorg.libXext
-      xorg.libXfixes
-      xorg.libXrandr
-      xorg.libxcb
+      libx11
+      libxcomposite
+      libxdamage
+      libxext
+      libxfixes
+      libxrandr
+      libxcb
       readline
     ];
 

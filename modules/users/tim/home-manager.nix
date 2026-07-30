@@ -24,6 +24,7 @@ in
         # Factorio (since its non-free) must be installed using some token shenanigans
         # factorio
         obsidian
+        codium
 
         thunderstore
       ];
