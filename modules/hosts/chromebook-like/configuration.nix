@@ -17,11 +17,6 @@
       disko
       ssh
     ];
-
-    # Since we do not have grub time, have this to help the nvme get found
-    # See https://www.reddit.com/r/zfs/comments/nijszx/newly_created_pool_doesnt_import_on_boot/
-    boot.kernelParams = [ "rootdelay=10" ];
-
     users.mutableUsers = false;
 
 
