@@ -13,7 +13,7 @@ in
       inputs.self.modules.nixos.SimpleNixosPC
       {
         disko.swapsize = "16G";
-        disko.device = "/dev/nvme0";
+        disko.device = "/dev/nvme0n1";
       }
     ];
 

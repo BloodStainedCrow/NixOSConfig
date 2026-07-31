@@ -13,9 +13,9 @@
           # tim
         ];
 
-      users.users."tim" = {
+      users.users."admin" = {
         isNormalUser = true;
-        description = "Tim";
+        description = "Admin";
         hashedPassword = "$y$j9T$FmA6o8ge4bLcGWsnzo0Cf1$2woTOdh/E4Ukr2P0yY7HKCS9UuGDC0iDS2lsyB4Gc01";
         extraGroups = [
           "wheel" "vtune" "networkmanager"
@@ -29,7 +29,7 @@
 
       # Add user secrets 
 
-      home-manager.users.tim = {
+      home-manager.users.admin = {
         # User settings only for this host
         home.stateVersion = "25.05";
       };
