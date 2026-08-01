@@ -6,6 +6,7 @@
   flake.modules.nixos.SimpleNixosPC = {
     imports = with inputs.self.modules.nixos; [
       system-simple-desktop
+      auto-upgrade
       grub {
         grub.hide = true;
       }
