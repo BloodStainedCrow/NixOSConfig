@@ -20,6 +20,9 @@
     ];
     users.mutableUsers = false;
 
+    # Enable plymouth to hide the "scary" boot logs
+    boot.plymouth.enable = true;
+
 
     services.xserver.xkb.layout = "de";
     console.keyMap = "de";
