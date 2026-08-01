@@ -12,6 +12,7 @@ let
       # AFAIK this is what I should use but it fails for some reason?
       # boot.zfs.package = config.boot.kernelPackages.${pkgs.zfs.kernelModuleAttribute};
       boot.zfs.package = pkgs.zfs_2_4;
+      boot.zfs.forceImportRoot = false;
 
       # grub.device = config.disko.device;
 
