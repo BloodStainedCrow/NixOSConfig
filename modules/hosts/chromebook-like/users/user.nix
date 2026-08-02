@@ -23,9 +23,11 @@
           inputs.self.modules.homeManager.system-simple-desktop
         ];
 
-        home.file."Desktop/firefox.desktop".source = "${pkgs.firefox}/share/applications/firefox.desktop";
-        home.file."Desktop/libreoffice-writer.desktop".source = "${pkgs.libreoffice}/share/applications/writer.desktop";
-        home.file."Desktop/libreoffice-calc.desktop".source = "${pkgs.libreoffice}/share/applications/calc.desktop";
+        # FIXME: Since the locale is german, the "Desktop" folder is called "Schreibtisch"
+        home.file."Schreibtisch/firefox.desktop".source = "${pkgs.firefox}/share/applications/firefox.desktop";
+        home.file."Schreibtisch/libreoffice-writer.desktop".source = "${pkgs.libreoffice}/share/applications/writer.desktop";
+        home.file."Schreibtisch/libreoffice-calc.desktop".source = "${pkgs.libreoffice}/share/applications/calc.desktop";
+        home.file."Schreibtisch/kmail.desktop".source = "${pkgs.kdePackages.kmail}/share/applications/calc.desktop";
 
         home.stateVersion = "25.05";
       };

@@ -17,6 +17,7 @@
     imports = with inputs.self.modules.homeManager; [
       simple-browser
       office
+      kmail
     ];
   };
 }
