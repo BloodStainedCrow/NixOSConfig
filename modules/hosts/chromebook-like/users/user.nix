@@ -27,7 +27,7 @@
         home.file."Schreibtisch/firefox.desktop".source = "${pkgs.firefox}/share/applications/firefox.desktop";
         home.file."Schreibtisch/libreoffice-writer.desktop".source = "${pkgs.libreoffice}/share/applications/writer.desktop";
         home.file."Schreibtisch/libreoffice-calc.desktop".source = "${pkgs.libreoffice}/share/applications/calc.desktop";
-        home.file."Schreibtisch/kmail.desktop".source = "${pkgs.kdePackages.kmail}/share/applications/calc.desktop";
+        home.file."Schreibtisch/kmail.desktop".source = "${pkgs.kdePackages.kmail}/share/applications/org.kde.kmail2.desktop";
 
         home.stateVersion = "25.05";
       };
