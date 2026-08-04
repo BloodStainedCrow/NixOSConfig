@@ -32,7 +32,7 @@
       home-manager.users.admin = {
         imports = [
           # FIXME: This is borked because non-impermanence setups fail to build
-          # inputs.self.modules.homeManager.system-desktop
+          inputs.self.modules.homeManager.codium
         ];
         # User settings only for this host
         home.stateVersion = "25.05";
