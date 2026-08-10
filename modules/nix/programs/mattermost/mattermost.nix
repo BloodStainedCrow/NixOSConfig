@@ -11,7 +11,7 @@
     }:
     {
       home.packages = [ 
-        pkgs.mattermost
+        pkgs.mattermost-desktop
       ];
     };
 }
