@@ -1,4 +1,8 @@
 {
+  inputs, 
+  ...
+}:
+{
   flake.modules.homeManager.codium =
     {
       pkgs,
@@ -7,6 +11,8 @@
     {
       programs.vscodium = {
         enable = true;
+        # Downpatch vscodium as a work around for https://github.com/microsoft/vscode/issues/285769
+        package = inputs.nixpkgs-codium.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vscodium;
 
         profiles.default = {
           enableUpdateCheck = false;
@@ -14,9 +20,7 @@
           
           extensions = [
             pkgs.vscode-extensions.jnoortheen.nix-ide
-            # These are broken due to beam stuff 
-            # pkgs.open-vsx.jeanp413.open-remote-ssh
-            # pkgs.vscode-marketplace.yy0931.save-as-root
+            pkgs.vscode-extensions.gruntfuggly.todo-tree
           ];
 
           keybindings = [

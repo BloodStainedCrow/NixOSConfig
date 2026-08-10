@@ -482,6 +482,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-codium_4": {
+      "locked": {
+        "lastModified": 1762943920,
+        "narHash": "sha256-ITeH8GBpQTw9457ICZBddQEBjlXMmilML067q0e6vqY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1782614948,
@@ -588,6 +604,7 @@
         "intel-vtune-sepdk": "intel-vtune-sepdk",
         "nix-index": "nix-index",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-codium": "nixpkgs-codium_4",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "old-nixpkgs": "old-nixpkgs",
         "packages": "packages",

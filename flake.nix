@@ -45,6 +45,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-codium.url = "github:nixos/nixpkgs?ref=91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     old-nixpkgs.url = "github:nixos/nixpkgs/23.05";
     packages = {

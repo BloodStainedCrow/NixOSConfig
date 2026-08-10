@@ -77,27 +77,21 @@ let
               atime = "off";
               "com.sun:auto-snapshot" = "false";
             };
-            # If the blank snapshot does not exist, create it recursively for all datasets
-            postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank -r";
 
             datasets = {
               root = {
                 # This gets wiped every reboot!
                 type = "zfs_fs";
                 mountpoint = "/";
+                options = lib.mkIf config.disko.encryptRoot {
+                  encryption = "aes-256-gcm";
+                  keyformat = "passphrase";
+                  keylocation = "prompt";
+                };
               };
               nix = {
                 type = "zfs_fs";
                 mountpoint = "/nix";
-              };
-              system = {
-                type = "zfs_fs";
-                mountpoint = "/persist/system";
-              };
-              # TODO: Dataset per user
-              "user/tim" = {
-                type = "zfs_fs";
-                mountpoint = "/persist/user/tim";
               };
             };
           };
@@ -106,7 +100,7 @@ let
     };
 in
 {
-  flake.modules.nixos.disko = {
+  flake.modules.nixos.disko-no-impermanence = {
     imports = [
       inputs.disko.nixosModules.default
       disko-config
@@ -122,6 +116,10 @@ in
         default = "";
       };
       disko.useBios = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+      disko.encryptRoot = lib.mkOption {
         type = lib.types.bool;
         default = false;
       };

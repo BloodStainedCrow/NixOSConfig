@@ -17,7 +17,11 @@
     imports = with inputs.self.modules.homeManager; [
       simple-browser
       office
-      kmail
     ];
+
+    programs.thunderbird = {
+      enable = true;
+      languagePacks = ["de"];
+    };
   };
 }

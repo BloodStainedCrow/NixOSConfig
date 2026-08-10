@@ -22,6 +22,16 @@
           directories = folderList;
         };
       };
+
+    addHomeFolder =
+      lib: config: folderList:
+      lib.optionalAttrs (config ? home && config.home ? persistence) {
+        home.persistance = {
+          "/persist/user/${config.home.username}" = {
+            directories = folderList;
+          };
+        };
+      };
   };
 
   flake.modules.nixos.impermanence = {
