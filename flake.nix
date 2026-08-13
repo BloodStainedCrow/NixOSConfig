@@ -8,6 +8,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dwarffs.url = "github:edolstra/dwarffs";
     factory_game = {
       url = "git+https://github.com/BloodStainedCrow/FactoryGame.git?ref=dev&lfs=1";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -17,6 +17,10 @@
         systemConstants
         pkgs-by-name
       ]);
+
+    # TODO: Factor out into module
+    # Enable a service to provide debuginfo to gdb for packages which were built with it on the cache.
+    services.nixseparatedebuginfod2.enable = true;
   };
 
   # impermanence is not added by default to home-manager, because of missing Darwin implementation
