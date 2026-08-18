@@ -36,5 +36,13 @@ in
       programs.pay-respects = {
         enable = true;
       };
+
+
+      nix = {
+        package = pkgs.nix;
+        settings = {
+          experimental-features = [ "flakes" "nix-command" ];
+        };
+      };
     };
 }
