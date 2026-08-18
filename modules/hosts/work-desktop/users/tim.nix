@@ -19,6 +19,10 @@
 
       home-manager.users.tim = {
         # User settings only for this host
+
+        nix = {
+            experimental-features = [ "flakes" "nix-command" ];
+        };
       };
     };
 }
