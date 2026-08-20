@@ -15,11 +15,15 @@ in
         system-cli
         work-browser
         office
-        codium
+        # codium does not work on non-nixos due to chromium jank
+        # codium
 
         spotify
         obsidian
-        mattermost
+        # mattermost does not work on non-nixos due to chromium jank
+        # mattermost
+
+        bash
       ];
       home = {
         username = "${username}";
@@ -44,5 +48,7 @@ in
           experimental-features = [ "flakes" "nix-command" ];
         };
       };
+
+      git.email = "tim.aschhoff@canonical.com";
     };
 }
